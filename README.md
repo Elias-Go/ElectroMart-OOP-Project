@@ -19,9 +19,9 @@ This project is built to strictly adhere to robust Object-Oriented Design patter
 ## 👥 Group Members (Group 2)
 1. Dagmawit Tewodros (UGR/6459/17)
 2. Dawit Habtamu (UGR/7646/17)
-3. Eldana Bililign (UGR/3730/17)
+3. Eldana Bililign (UGR/3730/17) — *Team Leader*
 4. Elias Goitom (UGR/3009/17)
-5. Ermias Mehreteab (UGR/9419/17) — *GitHub Manager & Team Leader*
+5. Ermias Mehreteab (UGR/9419/17) — *GitHub Manager*
 
 Submitted to: Mr. Kinde  
 Addis Ababa University, School of Electrical and Computer Engineering
