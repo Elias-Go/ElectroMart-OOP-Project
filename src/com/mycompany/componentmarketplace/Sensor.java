@@ -2,28 +2,17 @@ package com.mycompany.componentmarketplace;
 
 public class Sensor extends Product {
     private String sensorType;
-    private String measurementRange;
+    private double precision;
 
-    // Constructor passing core details to Product and initializing unique fields
-    public Sensor(int productId, String name, double price, int stockQuantity, String sensorType, double measurementRange) {
-        super(productId, name, price, stockQuantity);
+    // Constructor
+    public Sensor(int productId, String name, double price, int quantityInStock, String sensorType, double precision) {
+        // Automatically categorizes this instance as a "Sensor"
+        super(productId, name, price, quantityInStock, "Sensor");
         this.sensorType = sensorType;
-        this.measurementRange = measurementRange;
+        this.precision = precision;
     }
 
-    // Implementing the abstract method from the parent class
-    @Override
-    public void displayDetails() {
-        System.out.println("--- Sensor Details ---");
-        System.out.println("ID: " + getProductId());
-        System.out.println("Name: " + getName());
-        System.out.println("Price: $" + getPrice());
-        System.out.println("Stock: " + getStockQuantity() + " units");
-        System.out.println("Type: " + this.sensorType);
-        System.out.println("Range: " + this.measurementRange);
-    }
-
-    // --- GETTERS AND SETTERS FOR UNIQUE FIELDS ---
+    // --- GETTERS AND SETTERS ---
 
     public String getSensorType() {
         return sensorType;
@@ -33,11 +22,11 @@ public class Sensor extends Product {
         this.sensorType = sensorType;
     }
 
-    public String getMeasurementRange() {
-        return measurementRange;
+    public double getPrecision() {
+        return precision;
     }
 
-    public void setMeasurementRange(String measurementRange) {
-        this.measurementRange = measurementRange;
+    public void setPrecision(double precision) {
+        this.precision = precision;
     }
 }

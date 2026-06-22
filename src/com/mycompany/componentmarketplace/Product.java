@@ -1,6 +1,6 @@
 package com.mycompany.componentmarketplace;
 
-public class Product {
+public abstract class Product {
     private int productId;
     private String name;
     private double price;
