@@ -1,41 +1,34 @@
 package com.mycompany.componentmarketplace;
 
-import java.util.Date;
-import java.util.HashMap;
-
 public class Order {
     private int orderId;
-    private Customer customer;
-    private HashMap<Product, Integer> orderedItems;
+    private int userId;
     private double totalAmount;
-    private Date orderDate;
+    private String status;
 
-    // Full Constructor
-    public Order(int orderId, Customer customer, HashMap<Product, Integer> orderedItems, double totalAmount) {
+    // Constructor
+    public Order(int orderId, int userId, double totalAmount, String status) {
         this.orderId = orderId;
-        this.customer = customer;
-        // Creating a new HashMap copy ensures the order history stays unchanged
-        // even if the customer clears out their live shopping cart later.
-        this.orderedItems = new HashMap<>(orderedItems);
+        this.userId = userId;
         this.totalAmount = totalAmount;
-        this.orderDate = new Date(); // Automatically timestamps the order to "Right Now"
+        this.status = status;
     }
 
-    // Core Operational Methods
-    public void processOrder() {
-        // Member 3 will write logic to deduct final stock counts from the inventory
-        System.out.println("Processing order ID: " + this.orderId + " for " + customer.getName());
+    // --- ORDER OPERATIONS ---
+
+    // Generates a clean text receipt for the console (optional academic proof of logic)
+    public void generateReceipt() {
+        System.out.println("==================================");
+        System.out.println("         ORDER RECEIPT            ");
+        System.out.println("==================================");
+        System.out.println("Order ID: " + orderId);
+        System.out.println("User ID:  " + userId);
+        System.out.println("Status:   " + status);
+        System.out.println("Total:    $" + String.format("%.2f", totalAmount));
+        System.out.println("==================================");
     }
 
-    public void printInvoice() {
-        // Member 3 will write logic to print a clean receipt to the terminal or a file
-        System.out.println("=== INVOICE FOR ORDER #" + this.orderId + " ===");
-        System.out.println("Date: " + this.orderDate);
-        System.out.println("Customer: " + customer.getName());
-        System.out.println("Total Amount Paid: $" + this.totalAmount);
-    }
-
-    // --- GETTERS AND SETTERS FOR ALL FIELDS ---
+    // --- GETTERS AND SETTERS ---
 
     public int getOrderId() {
         return orderId;
@@ -45,20 +38,12 @@ public class Order {
         this.orderId = orderId;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public int getUserId() {
+        return userId;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
-
-    public HashMap<Product, Integer> getOrderedItems() {
-        return orderedItems;
-    }
-
-    public void setOrderedItems(HashMap<Product, Integer> orderedItems) {
-        this.orderedItems = orderedItems;
+    public void setUserId(int userId) {
+        this.userId = userId;
     }
 
     public double getTotalAmount() {
@@ -69,19 +54,11 @@ public class Order {
         this.totalAmount = totalAmount;
     }
 
-    public Date getOrderDate() {
-        return orderDate;
-    }
-
-    public void setOrderDate(Date orderDate) {
-        this.orderDate = orderDate;
-    }
-
-    public int getUserId() {
-        return 0;
-    }
-
     public String getStatus() {
-        return "";
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 }

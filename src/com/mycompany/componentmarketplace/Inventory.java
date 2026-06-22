@@ -1,39 +1,43 @@
 package com.mycompany.componentmarketplace;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class Inventory {
-    private ArrayList<Product> productList;
+    private List<Product> productList;
 
     // Constructor
     public Inventory() {
-        this.productList = new ArrayList<>(); // Initializes an empty warehouse
+        // Initialize the empty list so it's ready to receive data from the DatabaseManager
+        this.productList = new ArrayList<>();
     }
 
-    // Core Operational Methods
+    // --- INVENTORY OPERATIONS ---
+
     public void addProduct(Product product) {
-        // Member 2 will write the exact logic to add items to the list/database
-        System.out.println("Adding product to inventory: " + product.getName());
+        this.productList.add(product);
     }
 
     public void removeProduct(Product product) {
-        // Member 2 will write the logic to remove items safely
-        System.out.println("Removing product from inventory: " + product.getName());
+        this.productList.remove(product);
     }
 
-    public ArrayList<Product> searchProduct(String keyword) {
-        // Member 2 will write search algorithms (like looping through the list to match names)
-        System.out.println("Searching inventory for keyword: " + keyword);
-        return new ArrayList<>(); // Returns an empty list as a placeholder
+    public boolean checkStock(int productId, int requestedQuantity) {
+        for (Product p : productList) {
+            if (p.getProductId() == productId) {
+                return p.getQuantityInStock() >= requestedQuantity;
+            }
+        }
+        return false;
     }
 
     // --- GETTERS AND SETTERS ---
 
-    public ArrayList<Product> getProductList() {
+    public List<Product> getProductList() {
         return productList;
     }
 
-    public void setProductList(ArrayList<Product> productList) {
+    public void setProductList(List<Product> productList) {
         this.productList = productList;
     }
 }
