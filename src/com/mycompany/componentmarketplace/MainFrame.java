@@ -19,7 +19,7 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         // ⚠️ THE 3 STRINGS TO CHANGE FOR YOUR LOCAL MACHINE
-        this.dbManager = new DatabaseManager("jdbc:mysql://localhost:3306/electromart", "root", "password");
+        this.dbManager = new DatabaseManager("jdbc:sqlite:electromart.db", "", "");
 
         // Set up the main application window
         setTitle("ElectroMart Command Center");
@@ -191,7 +191,7 @@ public class MainFrame extends JFrame {
         saveBtn.addActionListener(e -> {
             try {
                 // We open a direct, rapid connection strictly for this admin insert
-                Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/electromart", "root", "password");
+                Connection conn = DriverManager.getConnection("jdbc:sqlite:electromart.db");
                 String query = "INSERT INTO products (name, price, quantity_in_stock, category, attribute_1, attribute_2) VALUES (?, ?, ?, ?, 'Standard', 'N/A')";
                 PreparedStatement stmt = conn.prepareStatement(query);
                 stmt.setString(1, nameField.getText());

@@ -10,15 +10,14 @@ public class DatabaseManager {
     // Constructor establishes the live connection
     public DatabaseManager(String url, String username, String password) {
         try {
-            this.connection = DriverManager.getConnection(url, username, password);
+            // Explicitly forces Java to load the SQLite driver class into memory
+            Class.forName("org.sqlite.JDBC");
+
+            this.connection = DriverManager.getConnection(url);
             System.out.println("✅ Database connection established successfully!");
-        } catch (SQLException e) {
+        } catch (Exception e) {
             System.err.println("❌ Database Connection Failed: " + e.getMessage());
         }
-    }
-
-    public DatabaseManager() {
-
     }
 
     // --- USER AUTHENTICATION ---
