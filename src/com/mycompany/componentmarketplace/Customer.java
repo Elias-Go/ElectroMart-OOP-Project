@@ -1,7 +1,7 @@
 package com.mycompany.componentmarketplace;
 
 public class Customer extends User {
-    private String address;
+     private String address;
 
     // Constructor
     public Customer(int userId, String name, String email, String password, String address) {

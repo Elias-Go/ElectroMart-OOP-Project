@@ -1,5 +1,6 @@
 package com.mycompany.componentmarketplace;
 
+
 public class Admin extends User {
 
     // Constructor
