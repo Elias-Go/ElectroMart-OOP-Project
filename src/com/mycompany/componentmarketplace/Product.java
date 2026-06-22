@@ -1,30 +1,22 @@
 package com.mycompany.componentmarketplace;
 
-public abstract class Product {
+public class Product {
     private int productId;
     private String name;
     private double price;
-    private int stockQuantity;
+    private int quantityInStock;
+    private String category;
 
-    // Full Constructor
-    public Product(int productId, String name, double price, int stockQuantity) {
+    // Constructor
+    public Product(int productId, String name, double price, int quantityInStock, String category) {
         this.productId = productId;
         this.name = name;
         this.price = price;
-        this.stockQuantity = stockQuantity;
+        this.quantityInStock = quantityInStock;
+        this.category = category;
     }
 
-    // Abstract method forcing ALL child classes to implement this (Polymorphism)
-    public abstract void displayDetails();
-
-    // Core Operational Method
-    public void updateStock(int quantity) {
-        // Adds to the stock (or subtracts if the quantity is negative)
-        this.stockQuantity += quantity;
-        System.out.println("Stock updated. New quantity for " + this.name + " is " + this.stockQuantity);
-    }
-
-    // --- GETTERS AND SETTERS FOR ALL FIELDS ---
+    // --- GETTERS AND SETTERS ---
 
     public int getProductId() {
         return productId;
@@ -50,11 +42,19 @@ public abstract class Product {
         this.price = price;
     }
 
-    public int getStockQuantity() {
-        return stockQuantity;
+    public int getQuantityInStock() {
+        return quantityInStock;
     }
 
-    public void setStockQuantity(int stockQuantity) {
-        this.stockQuantity = stockQuantity;
+    public void setQuantityInStock(int quantityInStock) {
+        this.quantityInStock = quantityInStock;
+    }
+
+    public String getCategory() {
+        return category;
+    }
+
+    public void setCategory(String category) {
+        this.category = category;
     }
 }

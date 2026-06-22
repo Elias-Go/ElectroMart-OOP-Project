@@ -1,43 +1,32 @@
 package com.mycompany.componentmarketplace;
 
 public class Microcontroller extends Product {
-    private String memorySize;
-    private double clockSpeed; // Stored in MHz
+    private String architecture;
+    private double clockSpeedGHz;
 
-    // Constructor passing core details to Product and initializing unique fields
-    public Microcontroller(int productId, String name, double price, int stockQuantity, String memorySize, double clockSpeed) {
-        super(productId, name, price, stockQuantity);
-        this.memorySize = memorySize;
-        this.clockSpeed = clockSpeed;
+    // Constructor
+    public Microcontroller(int productId, String name, double price, int quantityInStock, String architecture, double clockSpeedGHz) {
+        // Automatically sets the category to "Microcontroller" in the parent Product class
+        super(productId, name, price, quantityInStock, "Microcontroller");
+        this.architecture = architecture;
+        this.clockSpeedGHz = clockSpeedGHz;
     }
 
-    // Implementing the abstract method from the parent class
-    @Override
-    public void displayDetails() {
-        System.out.println("--- Microcontroller Details ---");
-        System.out.println("ID: " + getProductId());
-        System.out.println("Name: " + getName());
-        System.out.println("Price: $" + getPrice());
-        System.out.println("Stock: " + getStockQuantity() + " units");
-        System.out.println("Memory: " + this.memorySize);
-        System.out.println("Clock Speed: " + this.clockSpeed + " MHz");
+    // --- GETTERS AND SETTERS ---
+
+    public String getArchitecture() {
+        return architecture;
     }
 
-    // --- GETTERS AND SETTERS FOR UNIQUE FIELDS ---
-
-    public String getMemorySize() {
-        return memorySize;
+    public void setArchitecture(String architecture) {
+        this.architecture = architecture;
     }
 
-    public void setMemorySize(String memorySize) {
-        this.memorySize = memorySize;
+    public double getClockSpeedGHz() {
+        return clockSpeedGHz;
     }
 
-    public double getClockSpeed() {
-        return clockSpeed;
-    }
-
-    public void setClockSpeed(double clockSpeed) {
-        this.clockSpeed = clockSpeed;
+    public void setClockSpeedGHz(double clockSpeedGHz) {
+        this.clockSpeedGHz = clockSpeedGHz;
     }
 }
