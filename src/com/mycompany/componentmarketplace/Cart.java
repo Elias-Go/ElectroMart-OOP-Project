@@ -1,48 +1,48 @@
 package com.mycompany.componentmarketplace;
 
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Cart {
-    private Customer customer;
-    private HashMap<Product, Integer> items;
+    private int cartId;
+    private List<Product> items;
 
     // Constructor
-    public Cart(Customer customer) {
-        this.customer = customer;
-        this.items = new HashMap<>(); // Initializes an empty cart for the customer
+    public Cart(int cartId) {
+        this.cartId = cartId;
+        // Instantiate the empty list so it is ready to receive items
+        this.items = new ArrayList<>();
     }
 
-    // Core Operational Methods
-    public void addItem(Product product, int quantity) {
-        // Member 3 will write logic to add or update item quantities in the map
-        System.out.println("Added " + quantity + "x " + product.getName() + " to the cart.");
+    // --- CART OPERATIONS ---
+
+    public void addItem(Product product) {
+        this.items.add(product);
     }
 
     public void removeItem(Product product) {
-        // Member 3 will write logic to remove an item completely
-        System.out.println("Removed " + product.getName() + " from the cart.");
+        this.items.remove(product);
     }
 
     public double calculateTotal() {
-        // Member 3 will iterate through the HashMap to calculate the total price
-        return 0.0;
+        double total = 0.0;
+        for (Product item : items) {
+            total += item.getPrice();
+        }
+        return total;
     }
 
-    // --- GETTERS AND SETTERS ---
-
-    public Customer getCustomer() {
-        return customer;
+    public void clearCart() {
+        this.items.clear();
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
-    }
+    // --- GETTERS ---
 
-    public HashMap<Product, Integer> getItems() {
+    public List<Product> getItems() {
         return items;
     }
 
-    public void setItems(HashMap<Product, Integer> items) {
-        this.items = items;
+    public int getCartId() {
+        return cartId;
     }
 }
