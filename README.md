@@ -23,5 +23,17 @@ This project is built to strictly adhere to robust Object-Oriented Design patter
 4. Elias Goitom (UGR/3009/17)
 5. Ermias Mehreteab (UGR/9419/17) — *GitHub Manager*
 
+## 🔐 Test User Credentials
+You can log in using the following pre-configured database accounts to test the role-based routing:
+
+Customer View (Marketplace & Cart):
+* Email: buyer@gmail.com
+* Password: pass123
+
+Administrator View (Inventory Dashboard):
+* Email: admin@electromart.com
+* Password: admin123
+
+
 Submitted to: Mr. Kinde M 
 Addis Ababa University, School of Electrical and Computer Engineering
