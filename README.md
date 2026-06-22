@@ -23,5 +23,5 @@ This project is built to strictly adhere to robust Object-Oriented Design patter
 4. Elias Goitom (UGR/3009/17)
 5. Ermias Mehreteab (UGR/9419/17) — *GitHub Manager*
 
-Submitted to: Mr. Kinde  
+Submitted to: Mr. Kinde M 
 Addis Ababa University, School of Electrical and Computer Engineering
