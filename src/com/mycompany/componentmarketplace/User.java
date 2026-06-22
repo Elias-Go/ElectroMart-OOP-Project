@@ -15,7 +15,7 @@ public abstract class User {
     }
 
     /**
-     * NEW LOGIC: Authentication System
+     * Authentication System
      * Checks if the provided password matches the user's secure password.
      * @param inputPassword The password typed into the GUI
      * @return true if it matches, false if it is incorrect
