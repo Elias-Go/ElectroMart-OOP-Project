@@ -5,7 +5,7 @@ public class Semiconductor extends Product {
     private double voltageRating;
 
     // Constructor passing core details to Product and initializing unique fields
-    public Semiconductor(int productId, String name, double price, int stockQuantity, String type, double voltageRating) {
+    public Semiconductor(int productId, String name, double price, int stockQuantity, String type, String voltageRating) {
         super(productId, name, price, stockQuantity);
         this.type = type;
         this.voltageRating = voltageRating;

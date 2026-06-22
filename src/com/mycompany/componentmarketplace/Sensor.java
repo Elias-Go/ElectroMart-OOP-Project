@@ -5,7 +5,7 @@ public class Sensor extends Product {
     private String measurementRange;
 
     // Constructor passing core details to Product and initializing unique fields
-    public Sensor(int productId, String name, double price, int stockQuantity, String sensorType, String measurementRange) {
+    public Sensor(int productId, String name, double price, int stockQuantity, String sensorType, double measurementRange) {
         super(productId, name, price, stockQuantity);
         this.sensorType = sensorType;
         this.measurementRange = measurementRange;
