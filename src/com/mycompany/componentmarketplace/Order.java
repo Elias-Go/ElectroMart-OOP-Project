@@ -76,4 +76,12 @@ public class Order {
     public void setOrderDate(Date orderDate) {
         this.orderDate = orderDate;
     }
+
+    public int getUserId() {
+        return 0;
+    }
+
+    public String getStatus() {
+        return "";
+    }
 }
