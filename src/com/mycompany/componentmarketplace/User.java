@@ -6,7 +6,7 @@ public abstract class User {
     private String email;
     private String password;
 
-    // Full Constructor
+    // Constructor
     public User(int userId, String name, String email, String password) {
         this.userId = userId;
         this.name = name;
@@ -14,18 +14,26 @@ public abstract class User {
         this.password = password;
     }
 
-    // Core Operational Methods
-    public boolean login(String enteredEmail, String enteredPassword) {
-        // Member 3 will implement real database validation here later
+    /**
+     * NEW LOGIC: Authentication System
+     * Checks if the provided password matches the user's secure password.
+     * @param inputPassword The password typed into the GUI
+     * @return true if it matches, false if it is incorrect
+     */
+    public boolean authenticate(String inputPassword) {
+        // String.equals() is used for secure string comparison in Java
+        if (this.password != null && this.password.equals(inputPassword)) {
+            System.out.println("User authenticated successfully: " + this.name);
+            return true;
+        }
+        System.out.println("Authentication failed for user: " + this.name);
         return false;
     }
 
-    public void logout() {
-        System.out.println("User " + this.name + " has successfully logged out.");
-    }
+    // Abstract method forcing Customer and Admin to have their own specific dashboards
+    public abstract void displayRole();
 
-    // --- GETTERS AND SETTERS FOR ALL FIELDS ---
-
+    // --- GETTERS AND SETTERS ---
     public int getUserId() {
         return userId;
     }
