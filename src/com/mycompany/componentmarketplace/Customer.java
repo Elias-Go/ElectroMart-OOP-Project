@@ -5,25 +5,9 @@ public class Customer extends User {
 
     // Constructor
     public Customer(int userId, String name, String email, String password, String address) {
-        // super() calls the constructor of the parent class (User)
-        super(userId, name, email, password);
+        // Passes user details and forces the "Customer" role up to the parent User class
+        super(userId, name, email, password, "Customer");
         this.address = address;
-    }
-
-    // Core Operational Methods
-    public void register() {
-        // Member 3 will write the logic to save a new customer to the database here
-        System.out.println("Customer registration logic will execute here.");
-    }
-
-    public void viewPurchaseHistory() {
-        // Member 3 will write the logic to fetch past orders from the database
-        System.out.println("Displaying purchase history for: " + this.getName());
-    }
-
-    public void viewOrders() {
-        // Member 3 will write the logic to view current/active orders
-        System.out.println("Displaying current orders for: " + this.getName());
     }
 
     // --- GETTERS AND SETTERS ---

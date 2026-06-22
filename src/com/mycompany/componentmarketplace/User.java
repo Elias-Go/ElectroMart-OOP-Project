@@ -1,39 +1,23 @@
 package com.mycompany.componentmarketplace;
 
-public abstract class User {
+public class User {
     private int userId;
     private String name;
     private String email;
     private String password;
+    private String role; // "Admin" or "Customer"
 
     // Constructor
-    public User(int userId, String name, String email, String password) {
+    public User(int userId, String name, String email, String password, String role) {
         this.userId = userId;
         this.name = name;
         this.email = email;
         this.password = password;
+        this.role = role;
     }
-
-    /**
-     * Authentication System
-     * Checks if the provided password matches the user's secure password.
-     * @param inputPassword The password typed into the GUI
-     * @return true if it matches, false if it is incorrect
-     */
-    public boolean authenticate(String inputPassword) {
-        // String.equals() is used for secure string comparison in Java
-        if (this.password != null && this.password.equals(inputPassword)) {
-            System.out.println("User authenticated successfully: " + this.name);
-            return true;
-        }
-        System.out.println("Authentication failed for user: " + this.name);
-        return false;
-    }
-
-    // Abstract method forcing Customer and Admin to have their own specific dashboards
-    public abstract void displayRole();
 
     // --- GETTERS AND SETTERS ---
+
     public int getUserId() {
         return userId;
     }
@@ -64,5 +48,13 @@ public abstract class User {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public String getRole() {
+        return role;
+    }
+
+    public void setRole(String role) {
+        this.role = role;
     }
 }
